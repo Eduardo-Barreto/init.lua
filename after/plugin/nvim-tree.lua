@@ -52,6 +52,10 @@ nvim_tree.setup({
 		width = 30,
 		side = 'left',
 	},
+    git = {
+        enable = true,
+        ignore = false
+    }
 })
 
 vim.keymap.set('n', '<leader>e', vim.cmd.NvimTreeFocus)
