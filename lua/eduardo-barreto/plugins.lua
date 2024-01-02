@@ -64,26 +64,37 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 
-	-- use("HiPhish/rainbow-delimiters.nvim")
+	use({ "rktjmp/lush.nvim" })
+	use({ "JLighter/aura.nvim" })
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-nvim-lua")
 
-	-- snippets
-	use("L3MON4D3/LuaSnip")
-	use("rafamadriz/friendly-snippets")
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
 
-	-- LSP
-	use("neovim/nvim-lspconfig")
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "hrsh7th/cmp-cmdline" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-nvim-lua" },
+
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" },
+			{ "rafamadriz/friendly-snippets" },
+		},
+	})
 
 	use({
 		"windwp/nvim-autopairs",
@@ -127,6 +138,10 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 
 	use("romgrk/barbar.nvim")
+
+	use("cdelledonne/vim-cmake")
+
+	use("mhartington/formatter.nvim")
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

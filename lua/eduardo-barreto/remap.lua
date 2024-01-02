@@ -36,6 +36,4 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k")
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l")
 
 vim.keymap.set("n", "<leader>x", ":BufferClose<CR>")
-vim.keymap.set("n", "<leader>ff", function()
-	vim.lsp.buf.format()
-end)
+vim.keymap.set("n", "<leader>ff", ":FormatWrite<CR>")
