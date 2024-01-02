@@ -1,8 +1,17 @@
--- Utilities for creating configurations
-local util = require("formatter.util")
+local formatter_status_ok, formatter = pcall(require, "formatter")
+if not formatter_status_ok then
+	vim.notify("formatter failed to load")
+	return
+end
+
+local util_status_ok, util = pcall(require, "formatter.util")
+if not util_status_ok then
+	vim.notify("formatter util failed to load")
+	return
+end
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-require("formatter").setup({
+formatter.setup({
 	-- Enable or disable logging
 	logging = true,
 	-- Set the log level

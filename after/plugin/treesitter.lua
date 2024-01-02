@@ -1,4 +1,10 @@
-require("nvim-treesitter.configs").setup({
+local status_ok, tree_sitter = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+	vim.notify("tree-sitter failed to load")
+	return
+end
+
+tree_sitter.setup({
 	ensure_installed = {
 		"javascript",
 		"typescript",
@@ -25,11 +31,11 @@ require("nvim-treesitter.configs").setup({
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
-    indent = {
-        enable = true
-    },
-    context_commentstring = {
-        enable = true,
-        enable_autocmd = false
-    }
+	indent = {
+		enable = true,
+	},
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
 })
