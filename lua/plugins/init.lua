@@ -1,14 +1,8 @@
 return {
 
     { "nvim-lua/popup.nvim" },
+
     { "nvim-lua/plenary.nvim" },
-
-
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-    },
-
 
     { "edluffy/hologram.nvim" },
 
