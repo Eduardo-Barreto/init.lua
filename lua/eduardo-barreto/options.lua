@@ -1,6 +1,8 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.clipboard = 'unnamedplus'
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -36,5 +38,5 @@ vim.opt.ignorecase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.g.loaded_netrw = 1
-vim.g.netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.netrwPlugin = 1

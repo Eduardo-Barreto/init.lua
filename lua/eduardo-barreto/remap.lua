@@ -12,10 +12,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "<leader>p", '"_dP')
 
-vim.keymap.set("n", "<leader>y", '"+y')
-vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>Y", '"+Y')
-
 vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("n", "<leader>D", '"_d')
 
@@ -39,3 +35,5 @@ vim.keymap.set("n", "<leader>x", ":BufferClose<CR>")
 vim.keymap.set("n", "<leader>ff", ":FormatWrite<CR>")
 
 vim.keymap.set("n", "dd", '"_dd')
+
+vim.keymap.set("n", "<C-a>", 'ggVG')
