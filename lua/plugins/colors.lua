@@ -2,7 +2,6 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-
 	},
 
 	{
@@ -13,7 +12,6 @@ return {
 	{ "datsfilipe/min-theme.nvim" },
 
 	{ "lunarvim/colorschemes" },
-
 
 	{ "rktjmp/lush.nvim" },
 	{ "JLighter/aura.nvim" },
