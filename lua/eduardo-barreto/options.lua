@@ -38,5 +38,5 @@ vim.opt.ignorecase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- vim.g.loaded_netrw = 1
--- vim.g.netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.netrwPlugin = 1
