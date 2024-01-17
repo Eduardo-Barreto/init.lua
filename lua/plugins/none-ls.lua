@@ -6,14 +6,16 @@ return {
         local diagnostics = null_ls.builtins.diagnostics
         null_ls.setup({
             sources = {
-                formatting.prettier,
+                formatting.prettier.with({
+                    filetypes = { "html", "css", "json", "yaml", "markdown" },
+                }),
                 formatting.black.with({ extra_args = { "--fast" } }),
                 formatting.stylua,
+                formatting.clang_format,
                 formatting.uncrustify.with({
                     args = { "-c", "./uncrustify.cfg" },
                     filetypes = { "h", "hpp", "c", "cpp" },
                 }),
-                formatting.clang_format,
                 diagnostics.flake8,
             },
         })

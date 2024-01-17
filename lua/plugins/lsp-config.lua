@@ -51,7 +51,7 @@ local function lsp_keymaps(bufnr)
     end, opts)
 
     opts.desc = "Signature help"
-    vim.keymap.set.set("n", "<C-k>", function()
+    vim.keymap.set("n", "<C-k>", function()
         vim.lsp.buf.signature_help()
     end, opts)
 
@@ -123,6 +123,8 @@ return {
             local lspconfig = require("lspconfig")
             local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+            local capabilities = cmp_nvim_lsp.default_capabilities()
+            capabilities.offsetEncoding = { "utf-8", "utf-16" }
             for _, server in pairs(servers) do
                 local opts = {
                     on_attach = on_attach,
