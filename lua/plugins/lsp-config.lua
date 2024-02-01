@@ -9,6 +9,7 @@ local servers = {
     "tsserver",
     "marksman",
     "ruff_lsp",
+    "pyright",
 }
 
 local function lsp_highlight_document(client)
@@ -28,7 +29,7 @@ local function lsp_highlight_document(client)
 end
 
 local function lsp_keymaps(bufnr)
-    local opts = { buffer = bufnr, noremap = true}
+    local opts = { buffer = bufnr, noremap = true }
 
     opts.desc = "Go to declaration"
     vim.keymap.set("n", "gD", function()
@@ -135,6 +136,15 @@ return {
 
                 lspconfig[server].setup(opts)
             end
+
+            require("lspconfig").clangd.setup({
+                on_attach = on_attach,
+                capabilities = cmp_nvim_lsp.default_capabilities(),
+                cmd = {
+                    "clangd",
+                    "--offset-encoding=utf-16",
+                },
+            })
         end,
     },
 }
