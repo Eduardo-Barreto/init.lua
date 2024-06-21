@@ -20,29 +20,6 @@ return {
     { "cdelledonne/vim-cmake" },
 
     {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                suggestion = {
-                    auto_trigger = true,
-                    keymap = {
-                        accept = "<A-j>",
-                        accept_word = false,
-                        accept_line = false,
-                        next = "<A-]>",
-                        prev = "<A-[>",
-                        dismiss = "<C-]>",
-                    },
-                },
-                filetypes = {
-                    markdown = true,
-                },
-            })
-        end,
-    },
-    {
         "barrett-ruth/live-server.nvim",
         build = "yarn global add live-server",
         config = function()
